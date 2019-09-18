@@ -22,8 +22,8 @@
   };
 
   /**
-   * Cloning contents from a &lt;template&gt; element is more performant
-   * than using innerHTML because it avoids addtional HTML parse costs.
+   * Cloning contents from a &lt;template&gt; element is more performance
+   * than using innerHTML because it avoids additional HTML parse costs.
    */
   const template = document.createElement('template');
   template.innerHTML = `

@@ -1,0 +1,49 @@
+<style>
+  howto-tab {
+    border: 1px solid black;
+    padding: 20px;
+  }
+  howto-panel {
+    padding: 20px;
+    background-color: lightgray;
+  }
+  howto-tab[selected] {
+    background-color: bisque;
+  }
+
+  howto-tabs:not(:defined),
+  howto-tab:not(:defined),
+  howto-panel:not(:defined) {
+    display: block;
+  }
+</style>
+<howto-tabs>
+  <howto-tab role="heading" slot="tab">Tab 1</howto-tab>
+  <howto-panel role="region" slot="panel">Content 1</howto-panel>
+  <howto-tab role="heading" slot="tab">Tab 2</howto-tab>
+  <howto-panel role="region" slot="panel">Content 2</howto-panel>
+  <howto-tab role="heading" slot="tab">Tab 3</howto-tab>
+  <howto-panel role="region" slot="panel">Content 3</howto-panel>
+</howto-tabs>
+<div>
+  https://developers.google.com/web/fundamentals/web-components/examples/howto-tabs
+</div>
+<script>
+  setTimeout(() => {
+    function loadScript(src) {
+      return new Promise(resolve => {
+        const s = document.createElement('script');
+        s.onload = resolve;
+        s.src = src;
+        document.head.appendChild(s);
+      });
+    }
+
+    const scriptsToLoad = ['howto-label.js', 'howto-tabs.js'];
+
+    scriptsToLoad.reduce(
+      (chain, src) => chain.then(_ => loadScript(src)),
+      Promise.resolve()
+    );
+  }, 1000);
+</script>
