@@ -39,6 +39,9 @@
       ::slotted(howto-panel) {
         flex-basis: 100%;
       }
+      .panel {
+        background-color: red;
+      }
     </style>
     <slot name="tab"></slot>
     <slot name="panel"></slot>
