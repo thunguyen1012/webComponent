@@ -71,6 +71,7 @@
 
 <div>
   <button onclick="disable()">Disable</button>
+  <button onclick="remove()">Remove</button>
 </div>
 
 <script src="./howto-inputgroup.js"></script>
@@ -78,5 +79,10 @@
   function disable() {
     const inputGroup = document.getElementsByTagName('howto-inputgroup')[0];
     inputGroup.disabled = !inputGroup.disabled;
+  }
+
+  function remove() {
+    const inputGroup = document.getElementsByTagName('howto-inputgroup')[0];
+    inputGroup && inputGroup.remove();
   }
 </script>

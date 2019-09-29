@@ -1,5 +1,7 @@
 (function() {
   class HowToInputGroup extends HTMLElement {
+    static observedAttributes = ['disabled'];
+
     // A getter/setter for a disabled property.
     get disabled() {
       return this.hasAttribute('disabled');
@@ -15,6 +17,8 @@
     constructor() {
       super();
 
+      console.log('Constructor');
+
       this.innerHTML = `
         <div class="input-group">
           <div class="input-group-prepend">
@@ -23,6 +27,18 @@
           <input type="text" class="form-control">
         </div>
         `;
+    }
+
+    connectedCallback() {
+      console.log('connectedCallback');
+    }
+
+    disconnectedCallback() {
+      console.log('disconnectedCallback');
+    }
+
+    attributeChangedCallback(attrName, oldVal, newVal) {
+      console.log('attributeChangedCallback', attrName, oldVal, newVal);
     }
   }
   customElements.define('howto-inputgroup', HowToInputGroup);
