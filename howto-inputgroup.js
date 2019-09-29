@@ -67,13 +67,20 @@
     :host([disabled]) {
       pointer-events: none;
     }
+
+    .input-group-end::slotted(*) {
+      padding: 0.375rem 0.75rem;
+      line-height: 1.5;
+      color: red;
+}
+   }
   </style>
   <div class="input-group">
     <div class="input-group-prepend">
       <span class="input-group-text">@</span>
     </div>
     <input type="text" class="form-control">
-    <slot name="addition"></slot>
+    <slot name="addition" class="input-group-end"></slot>
   </div>
   `;
 
