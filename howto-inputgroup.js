@@ -73,6 +73,7 @@
       <span class="input-group-text">@</span>
     </div>
     <input type="text" class="form-control">
+    <slot name="addition"></slot>
   </div>
   `;
 
@@ -113,7 +114,5 @@
     }
   }
 
-  setTimeout(() => {
-    customElements.define('howto-inputgroup', HowToInputGroup);
-  }, 5000);
+  customElements.define('howto-inputgroup', HowToInputGroup);
 })();
