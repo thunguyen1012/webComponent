@@ -112,5 +112,8 @@
       console.log('attributeChangedCallback', attrName, oldVal, newVal);
     }
   }
-  customElements.define('howto-inputgroup', HowToInputGroup);
+
+  setTimeout(() => {
+    customElements.define('howto-inputgroup', HowToInputGroup);
+  }, 5000);
 })();

@@ -3,6 +3,32 @@
     width: 30%;
     margin: 10rem auto;
   }
+
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  howto-inputgroup:not(:defined) {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem !important;
+    border-radius: 0.25rem;
+    height: calc(1.5em + 0.75rem + 2px);
+
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ced4da;
+    background: linear-gradient(to right, #ced4da 8%, #f0f0f0 18%, #ced4da 33%);
+  }
 </style>
 
 <howto-inputgroup></howto-inputgroup>
@@ -23,4 +49,8 @@
     const inputGroup = document.getElementsByTagName('howto-inputgroup')[0];
     inputGroup && inputGroup.remove();
   }
+
+  customElements.whenDefined('howto-inputgroup').then(() => {
+    console.log('howto-inputgroup was defined');
+  });
 </script>
