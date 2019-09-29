@@ -72,7 +72,11 @@
       padding: 0.375rem 0.75rem;
       line-height: 1.5;
       color: red;
-}
+    }
+
+    :host-context(.double), :host-context(.double) .form-control {
+      font-size: 2rem;
+    }
    }
   </style>
   <div class="input-group">
