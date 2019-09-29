@@ -69,4 +69,14 @@
 
 <howto-inputgroup></howto-inputgroup>
 
+<div>
+  <button onclick="disable()">Disable</button>
+</div>
+
 <script src="./howto-inputgroup.js"></script>
+<script>
+  function disable() {
+    const inputGroup = document.getElementsByTagName('howto-inputgroup')[0];
+    inputGroup.disabled = !inputGroup.disabled;
+  }
+</script>
