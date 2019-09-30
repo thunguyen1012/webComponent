@@ -63,4 +63,10 @@
   inputGroup.addEventListener('focus', e => {
     console.log('host: handle focus of inputGroup', e.srcElement);
   });
+
+  window.addEventListener('inputgroup-focus', e => {
+    console.log('host: handle focus of inputGroup');
+  });
+
+  inputGroup.customFocus();
 </script>

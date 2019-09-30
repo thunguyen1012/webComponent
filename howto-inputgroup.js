@@ -125,6 +125,14 @@
     attributeChangedCallback(attrName, oldVal, newVal) {
       console.log('attributeChangedCallback', attrName, oldVal, newVal);
     }
+
+    customFocus() {
+      const input = this.shadowRoot.querySelector('input');
+      input.focus();
+      input.dispatchEvent(
+        new Event('inputgroup-focus', { bubbles: true, composed: true })
+      );
+    }
   }
 
   customElements.define('howto-inputgroup', HowToInputGroup);
