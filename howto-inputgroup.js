@@ -108,7 +108,10 @@
 
       console.log('Constructor');
 
-      const shadowRoot = this.attachShadow({ mode: 'open' });
+      const shadowRoot = this.attachShadow({
+        mode: 'open',
+        delegatesFocus: true
+      });
       shadowRoot.appendChild(inputGroupTemplate.content.cloneNode(true));
 
       console.log(this.shadowRoot, shadowRoot.host);
