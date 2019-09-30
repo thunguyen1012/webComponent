@@ -110,6 +110,8 @@
 
       const shadowRoot = this.attachShadow({ mode: 'open' });
       shadowRoot.appendChild(inputGroupTemplate.content.cloneNode(true));
+
+      console.log(this.shadowRoot, shadowRoot.host);
     }
 
     connectedCallback() {
